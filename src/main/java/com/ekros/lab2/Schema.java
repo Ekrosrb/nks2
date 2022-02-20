@@ -6,13 +6,13 @@ import java.util.List;
 
 public class Schema {
 
-  private final int[][] schema;
-  private final double[] p;
-  private final int[] input;
-  private final int[] output;
-  private double pSystem;
-  private List<int[]> workableStates;
-  private List<Double> pStates;
+  protected final int[][] schema;
+  protected final double[] p;
+  protected final int[] input;
+  protected final int[] output;
+  protected double pSystem;
+  protected List<int[]> workableStates;
+  protected List<Double> pStates;
 
 
   public Schema(int[][] schema, double[] p, int[] input, int[] output) {
