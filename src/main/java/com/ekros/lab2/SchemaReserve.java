@@ -12,6 +12,7 @@ public class SchemaReserve extends Schema{
   private double gQ;
   private double gP;
   private double gT;
+  private String mode = "";
 
   public SchemaReserve(int[][] schema, double[] p, int[] input, int[] output, int hours, int multiplicity) {
     super(schema, p, input, output);
@@ -29,6 +30,8 @@ public class SchemaReserve extends Schema{
     gQ = qReservedSystem/qSystem;
     gP = pReservedSystem/pSystem;
     gT = (double) (tReservedSystem)/tSystem;
+
+    mode = "Not Loaded General Reserved";
   }
 
   public void calcLoadedGeneral(){
@@ -41,6 +44,8 @@ public class SchemaReserve extends Schema{
     gQ = qReservedSystem/qSystem;
     gP = pReservedSystem/pSystem;
     gT = (double) (tReservedSystem)/tSystem;
+
+    mode = "Loaded General Reserved";
   }
 
   public void calcNotLoadedSeparate(){
@@ -70,6 +75,8 @@ public class SchemaReserve extends Schema{
     gQ = qReservedSystem/qSystem;
     gP = pReservedSystem/pSystem;
     gT = (double) (tReservedSystem)/tSystem;
+
+    mode = "Not Loaded Separate Reserved";
   }
 
   public void calcLoadedSeparate(){
@@ -99,10 +106,12 @@ public class SchemaReserve extends Schema{
     gP = pReservedSystem/pSystem;
     gT = (double) (tReservedSystem)/tSystem;
 
+    mode = "Loaded Separate Reserved";
   }
 
 
   public void printData() {
+    System.out.println(mode);
     System.out.println("Psystem(" + hours + ") = " + pSystem);
     System.out.println("Qsystem(" + hours + ") = " + qSystem);
     System.out.println("Tsystem = " + tSystem);
@@ -112,7 +121,7 @@ public class SchemaReserve extends Schema{
     System.out.println("gQ = " + gQ);
     System.out.println("gP = " + gP);
     System.out.println("gT = " + gT);
-    System.out.println("---------------------------------------");
+    System.out.println("\n---------------------------------------\n");
   }
 
   private long factorial(long num){
